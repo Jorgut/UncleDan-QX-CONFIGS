@@ -1,4 +1,6 @@
-要在中国大陆配置Apple News，您需要遵循以下步骤：
+目前版本配置中已经解锁Apple news
+
+但是要在中国大陆配置Apple News，您需要遵循以下步骤：
 
 创建美区Apple ID：
 
