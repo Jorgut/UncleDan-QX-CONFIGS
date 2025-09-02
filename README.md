@@ -1,32 +1,68 @@
-目前版本配置中已经解锁Apple news
+# Qxlazydan Quantumult X 配置
 
-但是要在中国大陆配置Apple News，您需要遵循以下步骤：
+懒人自用 Quantumult X 配置，借鉴了各路大佬的规则，整合广告拦截、分流、策略组与常用解锁功能。  
+作者：[@jorgut](https://github.com/Jorgut)  
+更新日期：2025-09-01  
 
-创建美区Apple ID：
+---
 
-您需要一个美国地区的Apple ID，以便下载和使用Apple News。可以通过在Apple官网注册或使用已有的美区账号。
+## 🔗 下载直链
 
-修改设备设置：
+将下方直链粘贴到 Quantumult X → Profile → Download from URL 中即可导入：
 
-在您的iPhone或iPad上，前往“设置” > “通用” > “语言与地区”，将地区设置为“美国”。
+```
+https://raw.githubusercontent.com/Jorgut/UncleDan-QX-CONFIGS/master/Lazydan2025.conf
+```
 
-下载Apple News：
+---
 
-使用美区Apple ID登录App Store，搜索并下载Apple News应用。
+## 📖 使用说明
 
-使用代理：
+1. **Profile 导入**  
+   - Quantumult X → 配置文件 → 从 URL 下载  
+   - 粘贴直链，保存即可。
 
-由于Apple News在中国大陆受到限制，您需要使用代理服务（如VPN）来访问。确保您的代理服务器位于美国，并且能够正常工作。
+2. **证书 (MitM)**  
+   - 请在 Quantumult X → 设置 → MitM 中手动生成证书，并在系统设置中安装与信任。  
+   - 仓库中的 `passphrase` 与 `p12` 已留空，仅提供占位，不包含真实证书。
 
-启用飞行模式：
+3. **策略组说明**  
+   - AI / Claude / Copilot / Gemini → AI 服务走专用策略组。  
+   - 🎬 YouTube、📺 Netflix、🍎 苹果服务 → 常用流媒体分流。  
+   - 🕹 终极清单 → 兜底策略组。  
 
-开启飞行模式，然后连接Wi-Fi。这样可以避免使用中国运营商的网络，防止被地区限制检测到。
+4. **复写 (Rewrite)**  
+   - 已集成 Reddit、YouTube、小红书、Spotify、微博等常见去广告与解锁脚本。  
+   - 保持远程脚本更新，建议 `update-interval=172800` (两天)。
 
-打开地图应用：
+5. **分流 (Filter)**  
+   - 来自 [blackmatrix7](https://github.com/blackmatrix7/ios_rule_script) 与 [ddgksf2013](https://github.com/ddgksf2013) 的规则集。  
+   - 国内 IP / 国内网站直连，海外服务按策略组分流。  
 
-打开系统自带的地图应用（Maps），等待几秒钟，确保地图数据切换到国外版本（如TomTom），以便Apple News能够正常运行。
+---
 
-访问Apple News：
+## ⚠️ 注意事项
 
-在完成上述步骤后，您可以打开Apple News应用并开始浏览内容。如果遇到任何问题，可以尝试重新启动应用或重复上述步骤。
-请注意，这些步骤可能会因系统更新或政策变化而有所不同，因此建议定期检查相关信息以确保配置成功。 
+- 建议保持仓库为 **公开配置 + 本地证书**，避免泄露隐私。  
+- 若需存放证书，请将仓库改为 **私有**。  
+- 导入后请检查 Quantumult X 日志，确认无 `Wrong grammar` 报错。  
+- 策略组名称需与 `force-policy` 保持完全一致（含 Emoji 和中文）。  
+
+---
+
+## 🙏 鸣谢
+
+本配置参考并使用了以下项目与作者的脚本：
+
+- [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script)  
+- [ddgksf2013/Rewrite](https://github.com/ddgksf2013/Rewrite)  
+- [KOP-XIAO/QuantumultX](https://github.com/KOP-XIAO/QuantumultX)  
+- 其他开源贡献者  
+
+---
+
+## 📬 反馈
+
+问题或建议请提交 Issue，或联系：  
+- 邮箱：ins.stu@outlook.com  
+- 微信公众号：ArchIntera／界构实验室  
